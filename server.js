@@ -5,10 +5,10 @@
 */
 
 var express = require('express')
-var app = express();
+var app = express()
 
 var isDate = function(date) {
-  return ((new Date(date)).toString() !== "Invalid Date") ? true : false;
+  return ((new Date(date)).toString() !== "Invalid Date") ? true : false
 }
  
 app.get('/:string', function (req, res) {
@@ -19,7 +19,7 @@ app.get('/:string', function (req, res) {
   if (isDate(dateString)) {
     var dateObj = new Date(dateString)
     res.writeHead(200, { 'Content-Type': 'application/json' })
-    var options = { month: 'long', day: 'numeric', year: 'numeric' };
+    var options = { month: 'long', day: 'numeric', year: 'numeric' }
     var naturalDate= dateObj.toLocaleString("en-us", options)
     var resJson = { unix: dateObj.getTime()/1000, natural: naturalDate }
    } else {
