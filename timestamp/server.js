@@ -28,4 +28,4 @@ app.get('/:string', function (req, res) {
    res.end(JSON.stringify(resJson))
 })
 
-app.listen(8080)
+app.listen(process.env.PORT || 8080)
