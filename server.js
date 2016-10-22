@@ -8,7 +8,8 @@ var express = require('express')
 var app = express();
 
 var isDate = function(date) {
-  return ((new Date(date)).toString() !== "Invalid Date") ? true : false;  }
+  return ((new Date(date)).toString() !== "Invalid Date") ? true : false;
+}
  
 app.get('/:string', function (req, res) {
   var dateString = req.params.string
