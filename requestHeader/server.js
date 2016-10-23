@@ -4,6 +4,7 @@ User Story: I can get the IP address, language and operating system for my brows
 
 var express = require('express')
 var app = express()
+app.enable('trust proxy')
 
 app.get('/', function (req, res) {
     var myRegexp = /\(([^)]+)\)/
@@ -11,7 +12,7 @@ app.get('/', function (req, res) {
  
     var resJson = {
         'language' : req.headers['accept-language'].split(",")[0],
-        'ipaddress' : req.headers.host,
+        'ipaddress' : req.ip,
         'software' : matchOs[1]
     }
 
