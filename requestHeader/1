@@ -1,0 +1,14 @@
+/*
+User Story: I can get the IP address, language and operating system for my browser.
+*/
+
+var express = require('express')
+var app = express()
+
+app.get('/', function (req, res) {
+    console.log(req.headers.host)
+ 
+    //res.end(JSON.stringify(resJson))
+})
+
+app.listen(process.env.PORT || 8080)
